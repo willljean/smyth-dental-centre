@@ -52,7 +52,7 @@ function Contact() {
           <div className="address-row">
             <img
               className="location-pin-img"
-              src="/src/assets/icons/location-pin.png"
+              src="/src/assets/location-pin.png"
               alt="Location pin"
             />
 
