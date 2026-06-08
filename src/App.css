@@ -1,0 +1,775 @@
+@font-face {
+  font-family: "Twentieth Century";
+  src: url("./assets/fonts/TwentiethCentury.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Twentieth Century";
+  src: url("./assets/fonts/TwentiethCenturyBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --navy: #17275e;
+  --deep-navy: #101b43;
+  --red: #d00000;
+  --white: #ffffff;
+  --soft-gray: #f5f6fb;
+  --text: #1d2a60;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Twentieth Century", Arial, sans-serif;
+  color: var(--text);
+  background: var(--soft-gray);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.site {
+  min-height: 100vh;
+}
+
+.header {
+  min-height: 120px;
+  padding: 18px 64px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+  position: relative;
+  z-index: 10;
+}
+
+.brand {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.brand-logo {
+  width: 230px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.nav button {
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 8px 0;
+  border-bottom: 4px solid transparent;
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  transition: 0.2s ease;
+}
+
+.nav-img-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  transition: 0.2s ease;
+}
+
+.nav button:hover .nav-img-icon,
+.nav button.active .nav-img-icon {
+  transform: translateY(-2px);
+}
+
+.nav button:hover,
+.nav button.active {
+  border-bottom-color: var(--red);
+  transform: translateY(-2px);
+}
+
+/* Home Page Styling */
+/* I asked Chat GPT to generate the wavy pattern. I have no clue how it works. */
+.home-page {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+
+  background-color: #111c49;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='64' viewBox='0 0 240 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-80 32 C-40 10 0 10 40 32 S120 54 160 32 S240 10 280 32 S360 54 400 32' fill='none' stroke='%23182655' stroke-width='30' stroke-linecap='butt'/%3E%3C/svg%3E");
+
+  background-size: 240px 64px;
+  background-repeat: repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+}
+
+.hero-content h1 {
+  margin: 0 auto 24px;
+  color: var(--white);
+  font-family: "Twentieth Century", Arial, sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.hero-content p {
+  color: var(--white);
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  line-height: 1.35;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 8px;
+  min-width: 270px;
+  padding: 18px 28px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: var(--red);
+  color: var(--white);
+}
+
+.secondary-button {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-3px);
+}
+/* Services Page Styling */
+.services-page {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  background-color: #111c49;
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='64' viewBox='0 0 240 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-80 32 C-40 10 0 10 40 32 S120 54 160 32 S240 10 280 32 S360 54 400 32' fill='none' stroke='%23182655' stroke-width='30' stroke-linecap='butt'/%3E%3C/svg%3E");
+  background-size: 240px 64px;
+  background-repeat: repeat;
+  padding: 42px 64px 48px;
+}
+
+/* Main services layout */
+.services-layout {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 10rem;
+  align-items: start;
+}
+
+/* Left service menu */
+.services-menu h1 {
+  color: var(--white);
+  font-size: clamp(3.8rem, 5vw, 5.4rem);
+  line-height: 0.9;
+  margin: 0 0 28px;
+  letter-spacing: 0.04em;
+}
+
+.service-list {
+  display: grid;
+  gap: 18px;
+}
+
+.service-tab {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--navy);
+  padding: 13px 14px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: none;
+  transition: 0.2s ease;
+}
+
+.service-tab:hover {
+  transform: translateY(-2px);
+}
+
+.active-service {
+  outline: 4px solid var(--red);
+}
+
+.service-info-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.active-service .service-info-icon {
+  background: var(--red);
+}
+
+/* Right information card */
+.service-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 32px 34px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 34px;
+  align-items: center;
+  box-shadow: none;
+  overflow: hidden;
+  min-height: 430px;
+  max-width: 850px;
+  margin-top: 35px;
+}
+
+.service-card-text {
+  max-width: 500px;
+}
+
+/* Text inside card */
+.eyebrow {
+  color: var(--red);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.service-card h2 {
+  color: var(--navy);
+  font-size: clamp(2.3rem, 3.4vw, 3.4rem);
+  line-height: 1;
+  margin: 0 0 18px;
+  letter-spacing: 0.04em;
+}
+
+.service-description {
+  font-size: 1.22rem;
+  line-height: 1.35;
+  margin: 0 0 18px;
+}
+
+.service-card h3 {
+  color: var(--navy);
+  font-size: 2rem;
+  margin: 0 0 8px;
+}
+
+.service-card ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 34px;
+  row-gap: 6px;
+}
+
+.service-card li {
+  font-size: 1.08rem;
+}
+
+/* Image inside the card */
+.service-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+}
+
+.service-image {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  display: block;
+}
+
+.root-canal-image {
+  transform: translate(10px, -8px);
+}
+
+/* Bookings Page Styling */
+.bookings-page {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  background-color: #111c49;
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='64' viewBox='0 0 240 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-80 32 C-40 10 0 10 40 32 S120 54 160 32 S240 10 280 32 S360 54 400 32' fill='none' stroke='%23182655' stroke-width='30' stroke-linecap='butt'/%3E%3C/svg%3E");
+  background-size: 240px 64px;
+  background-repeat: repeat;
+  padding: 56px 64px;
+}
+
+.bookings-layout {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 15rem;
+  align-items: center;
+}
+
+.bookings-intro h1 {
+  color: var(--white);
+  font-size: clamp(3.4rem, 4.8vw, 5rem);
+  line-height: 0.95;
+  margin: 0 0 24px;
+  letter-spacing: 0.04em;
+}
+
+.bookings-intro p {
+  color: var(--white);
+  font-size: 1.45rem;
+  line-height: 1.35;
+  margin: 0 0 28px;
+}
+
+.booking-services-button {
+  min-width: 250px;
+  border: 3px solid var(--white);
+}
+
+.booking-form-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 34px 38px;
+  display: grid;
+  gap: 16px;
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.25);
+  max-width: 770px;
+  width: 100%;
+}
+
+.booking-form-card label {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  align-items: center;
+  gap: 18px;
+  color: var(--navy);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.booking-form-card input,
+.booking-form-card select,
+.booking-form-card textarea {
+  width: 100%;
+  border: 2px solid #d8dbe7;
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--navy);
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  box-shadow: inset 0 0 0 1px rgba(23, 39, 94, 0.08);
+}
+
+.booking-form-card input:focus,
+.booking-form-card select:focus,
+.booking-form-card textarea:focus {
+  outline: 4px solid rgba(208, 0, 0, 0.18);
+  border-color: var(--red);
+}
+
+.notes-field {
+  align-items: start;
+}
+
+.booking-form-card textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.booking-submit-button {
+  justify-self: end;
+  width: calc(100% - 208px);
+  margin-top: 8px;
+  box-shadow: none;
+}
+
+/* Confirmation Screen */
+.booking-confirmation-layout {
+  max-width: 1240px;
+  min-height: calc(100vh - 232px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.appointment-summary-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 34px 38px;
+  color: var(--navy);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.25);
+}
+
+.appointment-summary-card h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 0 28px;
+  letter-spacing: 0.04em;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 0;
+  border-bottom: 4px solid var(--navy);
+}
+
+.summary-row:last-child {
+  border-bottom: 0;
+}
+
+.summary-icon {
+  color: var(--navy);
+  font-size: 1.8rem;
+}
+
+.summary-row strong {
+  font-size: 1.2rem;
+}
+
+.summary-row p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.confirmation-message {
+  text-align: center;
+  color: var(--white);
+}
+
+.confirmation-message h1 {
+  color: var(--white);
+  font-size: clamp(3rem, 5vw, 5.4rem);
+  line-height: 1;
+  margin: 0 0 18px;
+  letter-spacing: 0.08em;
+}
+
+.confirmation-message p {
+  max-width: 620px;
+  margin: 0 auto 36px;
+  color: var(--white);
+  font-size: 1.45rem;
+  line-height: 1.35;
+}
+
+.confirmation-button {
+  min-width: 220px;
+  box-shadow: none;
+}
+
+/* Contact Page Styling */
+.contact-page {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  background-color: #111c49;
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='64' viewBox='0 0 240 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-80 32 C-40 10 0 10 40 32 S120 54 160 32 S240 10 280 32 S360 54 400 32' fill='none' stroke='%23182655' stroke-width='30' stroke-linecap='butt'/%3E%3C/svg%3E");
+  background-size: 240px 64px;
+  background-repeat: repeat;
+  padding: 48px 80px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-layout {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 620px 1fr;
+  gap: 120px;
+  align-items: center;
+}
+
+
+.contact-left h1 {
+  color: var(--white);
+  font-size: clamp(3.8rem, 5vw, 5.4rem);
+  line-height: 0.95;
+  margin: 0 0 24px;
+  letter-spacing: 0.04em;
+}
+
+.contact-left p {
+  max-width: 600px;
+  color: var(--white);
+  font-size: clamp(1.55rem, 2.1vw, 2rem);
+  line-height: 1.35;
+  margin: 0 0 28px;
+}
+
+.contact-actions {
+  display: grid;
+  gap: 26px;
+  justify-items: start;
+}
+
+.contact-button {
+  min-width: 255px;
+  min-height: 54px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: var(--red);
+  color: var(--white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+}
+
+.email-button {
+  min-width: 310px;
+}
+
+.contact-button-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.contact-right {
+  color: var(--white);
+  display: grid;
+  gap: 44px;
+  justify-items: center;
+}
+
+.hours-list {
+  width: 100%;
+  max-width: 520px;
+}
+
+.hours-list p {
+  margin: 0 0 12px;
+  color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  gap: 20px;
+  align-items: center;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.1;
+}
+
+.hours-list strong {
+  text-align: right;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.hours-list span {
+  text-align: left;
+}
+
+.address-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--white);
+}
+
+.location-pin-img {
+  width: 55px;
+  height: auto;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.address-row p {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.55rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+}
+
+/* Responsive Home Page Styling for Mobile */
+@media (max-width: 850px) {
+  .home-page {
+    padding: 48px 24px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Responsive HeaderStyles for Mobile*/
+@media (max-width: 850px) {
+  .header {
+    padding: 24px;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .brand-logo {
+    width: 200px;
+  }
+
+  .nav {
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav button {
+    font-size: 1rem;
+  }
+
+  .nav-img-icon {
+  width: 28px;
+  height: 28px;
+  }
+
+}
+
+@media (max-width: 850px) {
+  .bookings-page {
+    padding: 42px 24px;
+  }
+
+  .bookings-layout,
+  .booking-confirmation-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .booking-form-card label {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .booking-submit-button {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .summary-row {
+    grid-template-columns: 32px 1fr;
+  }
+
+  .summary-row p {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 850px) {
+  .contact-page {
+    padding: 42px 24px;
+    align-items: flex-start;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .contact-left h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .contact-button,
+  .email-button {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .hours-list p {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: left;
+  }
+
+  .hours-list strong,
+  .hours-list span {
+    text-align: left;
+  }
+
+  .contact-right {
+    justify-items: start;
+  }
+
+  .address-row {
+    align-items: flex-start;
+  }
+}
